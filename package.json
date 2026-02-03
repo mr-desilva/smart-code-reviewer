@@ -65,6 +65,12 @@
           "default": "",
           "description": "Absolute or workspace-relative path to a custom guidelines file. Leave blank to use the built-in default."
         }
+        ,
+        "codeReviewer.model": {
+          "type": "string",
+          "default": "GPT-4o",
+          "description": "Copilot model to use when generating the review prompts."
+        }
       }
     }
   },

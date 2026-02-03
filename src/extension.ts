@@ -10,6 +10,7 @@ async function runReview(
   // Load user-specified guidelines if provided
   const config = vscode.workspace.getConfiguration('codeReviewer');
   let customPath = config.get<string>('guidelinesPath') || '';
+  const model = config.get<string>('model') || 'GPT-4o';
   let guidelines = '';
 
   if (customPath) {
@@ -41,6 +42,8 @@ async function runReview(
   }
 
   const prompt = [
+    `/model ${model}`,
+    '',
     `Please review the following code:`,
     '',
     selectedText,
